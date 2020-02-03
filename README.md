@@ -1,4 +1,5 @@
-# AI
+# Artificial Intelligence
+
 Codes for the Artificial intelligence course at Universidad EAFIT
 
 Click bellow to interact with the code!
