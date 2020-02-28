@@ -1,8 +1,6 @@
 numpy
-Cython
 matplotlib
 scikit-fuzzy
-bhtsne
 statsmodels
 scipy
 scikit-learn
