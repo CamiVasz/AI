@@ -52,7 +52,7 @@ def subtractive(X,r_a,metric):
     _m = []
     while _n > 0:
         dist = cdist(X[a:b], X, metric)
-        m = dist / (2 * ((r_a / 2) ** 2))
+        m = np.power(dist,2) / (2 * ((r_a / 2) ** 2))
         m = np.exp(-m).sum(axis=1)
         _m.append(m)
         _n = _n - s
@@ -75,7 +75,7 @@ def subtractive(X,r_a,metric):
 
         # Recompute density
         dm = cdist(X, C[-1].reshape(1, N), metric)
-        dm = dm / (2 * ((r_b / 2) ** 2))
+        dm = np.power(dm,2) / (2 * ((r_b / 2) ** 2))
         dm = m[ind] * np.exp(-dm)
 
         m = m - dm.flatten()
@@ -144,7 +144,7 @@ def mountain(X, sigma, metric):
 
         # Recompute density
         dm = cdist(Grid, C[-1].reshape(1, N), metric)
-        dm = dm / (2 * (beta ** 2))
+        dm = np.power(dm,2) / (2 * (beta ** 2))
         dm = m[ind] * np.exp(-dm)
 
         m = m - dm.flatten()
@@ -152,7 +152,7 @@ def mountain(X, sigma, metric):
 
         # Plot
         i += 1
-    return len(C)
+    return C
 
 def kmeans(X,k,metric):
     epsilon = 0.005
