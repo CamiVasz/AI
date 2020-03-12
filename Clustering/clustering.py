@@ -17,13 +17,13 @@ i1 = load_iris().data.T
 for i in range(N1):
     i1[i] = i1[i]/np.max(i1[i])
 i1 = i1.T
-ie = pd.read_csv('iris_embbeding.csv').values
-i2 = pd.read_csv('high_dimension_iris.csv').values
+ie = pd.read_csv('data/iris_embbeding.csv').values
+i2 = pd.read_csv('data/high_dimension_iris.csv').values
 
 # Credit card dataset
 n2 = 284807  # Number of samples
 N2 = 29    # Number of features
-c1 = pd.read_csv('creditcard.csv')
+c1 = pd.read_csv('data/creditcard.csv')
 c1 = c1.drop('Time', axis = 1)
 c1 = c1.drop('Class', axis = 1)
 c1 = c1.values.T
@@ -31,8 +31,8 @@ c1 = c1.values.T
 for i in range(N2):
     c1[i] = c1[i]/np.max(c1[i])
 c1 = c1.T
-ce = pd.read_csv('credit_embbeding.csv').values
-c2 = pd.read_csv('credit_pca.csv').values
+ce = pd.read_csv('data/credit_embbeding.csv').values
+c2 = pd.read_csv('data/credit_pca.csv').values
 
 # Subtractive clustering
 def subtractive(X,r_a,metric):
